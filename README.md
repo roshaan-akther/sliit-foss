@@ -44,6 +44,11 @@ This repository contains solutions for the SLIIT FOSS Bashaway competition chall
 **Solution**: Comprehensive monitoring dashboard with color-coded alerts
 **Location**: `Omens of disaster/`
 
+### 9. Prime Sentinel
+**Task**: Determine if a given number is prime or composite
+**Solution**: Efficient primality testing using trial division algorithm
+**Location**: `Prime Sentinel/`
+
 ## Requirements
 - Bash shell
 - Standard Unix utilities (awk, sed, grep, etc.)
