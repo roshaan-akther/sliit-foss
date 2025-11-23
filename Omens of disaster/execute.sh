@@ -4,7 +4,7 @@
 
 # Configuration
 MONITOR_INTERVAL=2  # seconds
-CPU_THRESHOLD=80    # percentage
+CPU_THRESHOLD=80    # percentage - my system usually hits 80% during heavy tasks
 MEM_THRESHOLD=85    # percentage
 DISK_THRESHOLD=90   # percentage
 
@@ -72,8 +72,8 @@ display_dashboard() {
 
     clear
     echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                     OMENS OF DISASTER                       ║"
-    echo "║                   System Monitoring Dashboard              ║"
+    echo "║                     OMENS OF DISASTER                        ║"
+    echo "║                   System Monitoring Dashboard                ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo
 

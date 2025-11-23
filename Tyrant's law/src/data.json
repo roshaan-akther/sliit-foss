@@ -1,0 +1,14 @@
+{
+  "zebra": "stripes",
+  "apple": "fruit",
+  "nested": {
+    "charlie": 3,
+    "alpha": 1,
+    "beta": {
+      "gamma": 4,
+      "alpha": 2
+    }
+  },
+  "array": [1, 2, 3],
+  "boolean": true
+}

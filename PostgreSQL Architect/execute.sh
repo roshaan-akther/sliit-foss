@@ -26,6 +26,8 @@ double euclidean_distance(double *a, double *b, int dim) {
     for (int i = 0; i < dim; i++) {
         double diff = a[i] - b[i];
         sum += diff * diff;
+        // debug: show intermediate calculations
+        // printf("diff[%d]: %.2f, sum: %.2f\n", i, diff, sum);
     }
     return sqrt(sum);
 }
