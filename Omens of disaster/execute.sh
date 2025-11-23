@@ -1,29 +1,29 @@
 #!/bin/bash
 
-# Omens of disaster: Real-time system monitoring with alerts
+# Omens of Disaster: Real-Time System Monitoring with Alerts
 
 # Configuration
 MONITOR_INTERVAL=2  # seconds
-CPU_THRESHOLD=80    # percentage - my system usually hits 80% during heavy tasks
+CPU_THRESHOLD=80    # percentage - system typically reaches 80% during intensive tasks
 MEM_THRESHOLD=85    # percentage
 DISK_THRESHOLD=90   # percentage
 
-# Colors for alerts
+# Colors for status indicators
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-# Function to get CPU usage
+# Calculate CPU usage percentage
 get_cpu_usage() {
-    # Get CPU usage percentage (user + system)
+    # Extract CPU usage from top command output
     cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
     echo "$cpu_usage"
 }
 
-# Function to get memory usage
+# Calculate memory usage percentage
 get_memory_usage() {
-    # Get memory usage percentage
+    # Compute memory usage from free command output
     mem_total=$(free | grep Mem | awk '{print $2}')
     mem_used=$(free | grep Mem | awk '{print $3}')
     if [ "$mem_total" -gt 0 ]; then
@@ -34,21 +34,21 @@ get_memory_usage() {
     fi
 }
 
-# Function to get disk usage
+# Calculate disk usage percentage
 get_disk_usage() {
-    # Get root filesystem usage percentage
+    # Extract root filesystem usage from df command
     disk_usage=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
     echo "$disk_usage"
 }
 
-# Function to get load average
+# Retrieve system load average
 get_load_average() {
-    # Get 1-minute load average
+    # Extract 1-minute load average from uptime command
     load_avg=$(uptime | awk -F'load average:' '{ print $2 }' | cut -d, -f1 | sed 's/ //g')
     echo "$load_avg"
 }
 
-# Function to check critical services
+# Check status of critical system services
 check_services() {
     services=("sshd" "systemd" "dbus")
     down_services=()
@@ -62,7 +62,7 @@ check_services() {
     echo "${down_services[@]}"
 }
 
-# Function to display dashboard
+# Display real-time system monitoring dashboard
 display_dashboard() {
     local cpu=$1
     local mem=$2

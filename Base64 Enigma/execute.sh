@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# base64 decoding - straightforward with the standard tool
+# Perform Base64 decoding using standard Unix utility
 echo "$1" | base64 -d

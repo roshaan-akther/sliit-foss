@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# recursively extract nested tar.gz archives
-# tried different approaches, this loop works reliably
+# Recursively extract nested tar.gz archives
+# Tested multiple approaches; this iterative method works reliably
 mkdir -p src out
 cd src
 while ls *.tar.gz &>/dev/null 2>&1; do

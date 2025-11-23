@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# PostgreSQL Architect Challenge - Simulated version
-# Demonstrates pgvector concepts with C program that simulates vector operations
+# PostgreSQL Architect Challenge - Simulated Version
+# Demonstrates pgvector concepts with C program for vector operations
 
 export SUPABASE_URL="https://uvvpkhcmqfozxabzsrwj.supabase.co"
 export SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2dnBraGNtcWZvenhhYnpzcndqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4NzEyNDEsImV4cCI6MjA3OTQ0NzI0MX0.9Bu5-JTpJ24-GFG6T5nZkwSRtlT9vgEI_wlqBlMqI4I"
@@ -10,7 +10,7 @@ echo "PostgreSQL Architect Challenge"
 echo "Simulating pgvector extension and vector operations..."
 echo
 
-# Create C program that demonstrates vector distance calculations
+# Generate C program for vector distance calculations
 cat > vector_client.c << 'EOF'
 #include <stdio.h>
 #include <stdlib.h>
