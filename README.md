@@ -7,7 +7,7 @@ This repository contains solutions for the SLIIT FOSS Bashaway competition chall
 ### 1. Tempest o' tabular
 **Task**: CSV aggregation with group-by and sum operations
 **Solution**: Bash script using awk for efficient CSV processing
-**Location**: `tempest o' tabular/`
+**Location**: `tempest o tabular/`
 
 ### 2. Byte Reverser
 **Task**: Reverse strings character by character
