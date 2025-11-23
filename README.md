@@ -49,6 +49,11 @@ This repository contains solutions for the SLIIT FOSS Bashaway competition chall
 **Solution**: Efficient primality testing using trial division algorithm
 **Location**: `Prime Sentinel/`
 
+### 10. Lost in the ashtray
+**Task**: Convert XML with namespaces and attributes to JSON with proper data types
+**Solution**: XML parsing and conversion using xmllint and Python for type preservation
+**Location**: `Lost in the ashtray/`
+
 ## Requirements
 - Bash shell
 - Standard Unix utilities (awk, sed, grep, etc.)
