@@ -4,11 +4,11 @@
 
 # Configuration
 MONITOR_INTERVAL=2  # seconds
-CPU_THRESHOLD=80    # percentage - system typically reaches 80% during intensive tasks
+CPU_THRESHOLD=80    # percentage - system hits this when running heavy stuff
 MEM_THRESHOLD=85    # percentage
 DISK_THRESHOLD=90   # percentage
 
-# Colors for status indicators
+# colors for showing status
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'

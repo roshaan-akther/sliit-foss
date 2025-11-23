@@ -12,15 +12,15 @@ double euclidean_distance(double *a, double *b, int dim) {
     for (int i = 0; i < dim; i++) {
         double diff = a[i] - b[i];
         sum += diff * diff;
-        // debug: show intermediate calculations
-        // printf("diff[%d]: %.2f, sum: %.2f\n", i, diff, sum);
+        // debug: check calculations
+        // printf("diff[%d]: %.2f, sum so far: %.2f\n", i, diff, sum);
     }
     return sqrt(sum);
 }
 
 int main() {
     printf("PostgreSQL Vector Database Simulation\n");
-    printf("=====================================\n\n");
+    printf("===================================\n\n");
 
     // Simulate pgvector extension enabled
     printf("[OK] pgvector extension enabled\n");

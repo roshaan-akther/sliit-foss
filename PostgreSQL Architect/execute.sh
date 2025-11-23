@@ -5,12 +5,14 @@
 
 export SUPABASE_URL="https://uvvpkhcmqfozxabzsrwj.supabase.co"
 export SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2dnBraGNtcWZvenhhYnpzcndqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4NzEyNDEsImV4cCI6MjA3OTQ0NzI0MX0.9Bu5-JTpJ24-GFG6T5nZkwSRtlT9vgEI_wlqBlMqI4I"
+# postgres vector stuff simulation
+# this is kinda complex, but works
 
 echo "PostgreSQL Architect Challenge"
-echo "Simulating pgvector extension and vector operations..."
+echo "Simulating pgvector extension and vector operations.."
 echo
 
-# Generate C program for vector distance calculations
+# make a C program for the vector stuff
 cat > vector_client.c << 'EOF'
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,15 +28,15 @@ double euclidean_distance(double *a, double *b, int dim) {
     for (int i = 0; i < dim; i++) {
         double diff = a[i] - b[i];
         sum += diff * diff;
-        // debug: show intermediate calculations
-        // printf("diff[%d]: %.2f, sum: %.2f\n", i, diff, sum);
+        // debug: check calculations
+        // printf("diff[%d]: %.2f, sum so far: %.2f\n", i, diff, sum);
     }
     return sqrt(sum);
 }
 
 int main() {
     printf("PostgreSQL Vector Database Simulation\n");
-    printf("=====================================\n\n");
+    printf("===================================\n\n");
 
     // Simulate pgvector extension enabled
     printf("[OK] pgvector extension enabled\n");

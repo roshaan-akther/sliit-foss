@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Ensure output directory exis
+# make sure output folder exist
 mkdir -p out
 
-# Process Csv data: group by category and sum amounts
+# process the csv file, group stuff and sum amounts
+# awk is good for this kinda thing
 awk -F, 'NR>1{a[$1]+=$2}END{print"category,total_amount";for(i in a)print i","a[i]}' src/data.csv > out/result.csv
