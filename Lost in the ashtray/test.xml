@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore xmlns:lib="http://library.example.com">
+  <book id="123" available="true">
+    <title>XML Detective Stories</title>
+    <author>Detective Smith</author>
+    <price currency="USD">29.99</price>
+    <year>2023</year>
+    <chapters>
+      <chapter number="1" title="The Missing Tag">
+        <pages>45</pages>
+      </chapter>
+      <chapter number="2" title="Namespace Mystery">
+        <pages>67</pages>
+      </chapter>
+    </chapters>
+  </book>
+  <book id="456" available="false">
+    <title>JSON Evidence</title>
+    <author>Agent Jones</author>
+    <price currency="EUR">24.50</price>
+    <year>2024</year>
+  </book>
+</bookstore>
