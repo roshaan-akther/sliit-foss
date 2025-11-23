@@ -6,25 +6,25 @@
 is_prime() {
     local num=$1
 
-    # special cases first
+# special cases first
     if [ "$num" -le 1 ]; then
         echo "$num is neither prime nor composite"
         return
     fi
 
-    # 2 is the only even prime
+# 2 is the only even prime
     if [ "$num" -eq 2 ]; then
         echo "$num is prime"
         return
     fi
 
-    # even numbers > 2 are composite
+# even numbers > 2 are composite
     if [ "$((num % 2))" -eq 0 ]; then
         echo "$num is composite"
         return
     fi
 
-    # check odd divisors up to sqrt(num)
+# check odd divisors up to sqrt(num)
     local i=3
     local sqrt_num=$(echo "sqrt($num)" | bc)
 
