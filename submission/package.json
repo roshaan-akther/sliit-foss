@@ -1,0 +1,17 @@
+{
+  "name": "api-phantom-submission",
+  "version": "1.0.0",
+  "description": "API Phantom challenge submission for SLIIT FOSS Bashaway",
+  "main": "execute.sh",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "@sliit-foss/actions-exec-wrapper": "^1.0.0",
+    "@sliit-foss/bashaway": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2"
+  }
+}
