@@ -71,47 +71,45 @@ display_dashboard() {
     local down_services=$5
 
     clear
-    echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                     OMENS OF DISASTER                        ║"
-    echo "║                   System Monitoring Dashboard                ║"
-    echo "╚══════════════════════════════════════════════════════════════╝"
+    echo "System Monitoring Dashboard"
+    echo "=========================="
     echo
 
     # CPU Usage
     if (( $(echo "$cpu > $CPU_THRESHOLD" | bc -l) )); then
-        echo -e "🔥 CPU Usage:     ${RED}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
+        echo -e "[CRITICAL] CPU Usage:     ${RED}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
     elif (( $(echo "$cpu > 60" | bc -l) )); then
-        echo -e "⚠️  CPU Usage:     ${YELLOW}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
+        echo -e "[WARNING] CPU Usage:     ${YELLOW}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
     else
-        echo -e "✅ CPU Usage:     ${GREEN}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
+        echo -e "[OK] CPU Usage:     ${GREEN}$cpu%${NC} (THRESHOLD: $CPU_THRESHOLD%)"
     fi
 
     # Memory Usage
     if (( $(echo "$mem > $MEM_THRESHOLD" | bc -l) )); then
-        echo -e "🔥 Memory Usage:  ${RED}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
+        echo -e "[CRITICAL] Memory Usage:  ${RED}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
     elif (( $(echo "$mem > 70" | bc -l) )); then
-        echo -e "⚠️  Memory Usage:  ${YELLOW}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
+        echo -e "[WARNING] Memory Usage:  ${YELLOW}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
     else
-        echo -e "✅ Memory Usage:  ${GREEN}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
+        echo -e "[OK] Memory Usage:  ${GREEN}$mem%${NC} (THRESHOLD: $MEM_THRESHOLD%)"
     fi
 
     # Disk Usage
     if (( disk > DISK_THRESHOLD )); then
-        echo -e "🔥 Disk Usage:    ${RED}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
+        echo -e "[CRITICAL] Disk Usage:    ${RED}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
     elif (( disk > 75 )); then
-        echo -e "⚠️  Disk Usage:    ${YELLOW}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
+        echo -e "[WARNING] Disk Usage:    ${YELLOW}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
     else
-        echo -e "✅ Disk Usage:    ${GREEN}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
+        echo -e "[OK] Disk Usage:    ${GREEN}$disk%${NC} (THRESHOLD: $DISK_THRESHOLD%)"
     fi
 
     # Load Average
-    echo -e "📊 Load Average: $load"
+    echo -e "Load Average: $load"
 
     # Services Status
     if [ ${#down_services[@]} -gt 0 ]; then
-        echo -e "🔴 Critical Services DOWN: ${RED}${down_services[*]}${NC}"
+        echo -e "[DOWN] Critical Services: ${RED}${down_services[*]}${NC}"
     else
-        echo -e "✅ Critical Services: ${GREEN}ALL RUNNING${NC}"
+        echo -e "[OK] Critical Services: ${GREEN}ALL RUNNING${NC}"
     fi
 
     echo
@@ -146,7 +144,7 @@ check_alerts() {
 
     # Print alerts
     if [ ${#alerts[@]} -gt 0 ]; then
-        echo "🚨 ALERTS DETECTED:"
+        echo "ALERTS DETECTED:"
         for alert in "${alerts[@]}"; do
             echo "   $alert"
         done

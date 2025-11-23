@@ -12,6 +12,8 @@ double euclidean_distance(double *a, double *b, int dim) {
     for (int i = 0; i < dim; i++) {
         double diff = a[i] - b[i];
         sum += diff * diff;
+        // debug: show intermediate calculations
+        // printf("diff[%d]: %.2f, sum: %.2f\n", i, diff, sum);
     }
     return sqrt(sum);
 }
@@ -19,10 +21,10 @@ double euclidean_distance(double *a, double *b, int dim) {
 int main() {
     printf("PostgreSQL Vector Database Simulation\n");
     printf("=====================================\n\n");
-    
+
     // Simulate pgvector extension enabled
-    printf("[✓] pgvector extension enabled\n");
-    printf("[✓] Table 'embeddings' created with vector(3) column\n\n");
+    printf("[OK] pgvector extension enabled\n");
+    printf("[OK] Table 'embeddings' created with vector(3) column\n\n");
     
     // Sample embeddings (simulating database records)
     Embedding embeddings[] = {
@@ -32,7 +34,7 @@ int main() {
     };
     int num_embeddings = 3;
     
-    printf("[✓] Inserted %d sample vector embeddings\n\n", num_embeddings);
+    printf("[OK] Inserted %d sample vector embeddings\n\n", num_embeddings);
     
     // Query vector (simulating nearest neighbor search)
     double query[3] = {2.0, 3.0, 4.0};
@@ -58,10 +60,10 @@ int main() {
         }
     }
     
-    printf("\n[✓] Nearest Neighbor Result:\n");
+    printf("\n[OK] Nearest Neighbor Result:\n");
     printf("    ID: %d\n", nearest_id);
     printf("    Distance: %.6f\n", min_distance);
-    printf("\n[✓] Vector similarity search completed successfully!\n");
+    printf("\n[OK] Vector similarity search completed successfully!\n");
     
     return 0;
 }
